@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Log in | Frontend</title>
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="icon" href="data;,">
+</head>
+
+<body>
+  <div class="container">
+    <form class="auth-box">
+      <h1>Log in</h1>
+      <p>
+        Don't have an account?
+        <a href="/index.html">Sign up</a>
+      </p>
+      <div id="error-message" role="alert">Message</div>
+
+      <label for="login-email">Email:</label>
+      <input id="login-email" class="input-box" type="email"
+        placeholder="Enter your email" autocomplete="off" required/>
+      <label for="login-password">Password:</label>
+      <input id="login-password" class="input-box" type="password"
+        placeholder="Enter your password" autocomplete="off" required/>
+
+      <button id="login-btn" type="submit" onclick="callLogin(event)">
+        Log in
+      </button>
+      <script type="module" src="/src/main.jsx"></script>
+    </form>
+  </div>
+</body>
+</html>

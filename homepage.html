@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatroom Project</title>
+  <link rel="stylesheet" href="/src/homepage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="icon" href="data;,">
+</head>
+
+<body>
+  <div class="sidebar" id="left-sidebar">
+    <div class="sidebar-top">
+      <button class="menu-btn" onclick="toggleMenu('user-sub-menu')">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+      <div class="menu-wrap unselectable" id="user-sub-menu">
+        <div class="menu">
+          <h3 class="user-info" id="user-info-name-display">User Info</h3>
+          <hr>
+          <div id="user-profile" class="menu-option"
+            onclick="toggleMenu('edit-sub-menu')">
+            <span class="option-icon material-symbols-outlined">manage_accounts</span>
+            <h4>Edit Profile</h4>
+          </div>
+          <div id="user-logout" class="menu-option" onclick="callLogout()">
+            <span class="option-icon material-symbols-outlined">logout</span>
+            <h4>Logout</h4>
+          </div>
+        </div>
+      </div>
+      <div class="search">
+        <span class="search-icon material-symbols-outlined unselectable">search</span>
+        <input id="search-input" type="search" placeholder="Search">
+      </div>
+    </div>
+    <ul id="contact-list">
+    </ul>
+  </div>
+  <div class="menu-wrap unselectable" id="edit-sub-menu">
+    <div class="menu">
+      <button class="close-btn" onclick="toggleMenu('edit-sub-menu')">
+        <span class="option-icon material-symbols-outlined">close</span>
+      </button>
+      <form class="name-box">
+        <h3>Edit Profile</h3>
+        <div id="error-message" role="alert">Message</div>
+
+        <label for="first-name">First Name</label>
+        <input id="first-name" class="input-box" type="text"
+          placeholder="First name" autocomplete="off" required/>
+        <label for="last-name">Last Name</label>
+        <input id="last-name" class="input-box" type="text"
+          placeholder="Last name" autocomplete="off" required/>
+
+        <button class="save-btn" type="submit" onclick="editProfile(event)">
+          Save
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="menu-wrap unselectable" id="delete-sub-menu">
+    <div class="menu">
+      <h4>Delete direct messages?</h4>
+      <button class="confirm-btn" type="submit" 
+        onclick="deleteDirectMessages(event)">Confirm</button>
+      <button class="cancel-btn" type="submit" 
+        onclick="toggleMenu('delete-sub-menu')">Cancel</button>
+    </div>
+  </div>
+  <div id="chatroom-box">
+    <ul id="messages"></ul>
+    <form id="chatroom-form">
+      <input id="message-input" autocomplete="off" placeholder="Type here"/>
+      <button type="submit" class="send-btn">
+        <span class="option-icon material-symbols-outlined">send</span>
+      </button>
+    </form>
+  </div>
+  <script type="module" src="/src/homepage.jsx"></script>
+  <script type="module" src="/src/main.jsx"></script>
+  <script type="module" src="/src/client.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up | Frontend</title>
+  <link rel="stylesheet" href="/src/index.css" />
+  <link rel="icon" href="data;,">
+</head>
+
+<body>
+  <div class="container">
+    <form class="auth-box">
+      <h1>Sign up</h1>
+      <p>
+        Already have an account?
+        <a href="login.html">Log in</a>
+      </p>
+      <div id="error-message" role="alert">Message</div>
+
+      <label for="signup-email">Email:</label>
+      <input id="signup-email" class="input-box" type="email"
+        placeholder="Enter your email" autocomplete="off" required/>
+      <label for="signup-password">Password:</label>
+      <input id="signup-password" class="input-box" type="password"
+        placeholder="Enter your password" autocomplete="off" required/>
+
+      <button id="signup-btn" type="submit" onclick="callSignup(event)">
+        Sign up
+      </button>
+      <script type="module" src="/src/main.jsx"></script>
+    </form>
+  </div>
+</body>
+</html>
